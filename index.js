@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const db = require("quick.db");
 const dev = "708453785499992154";
-
+ 
 app.listen();
 app.use('/ping', (req, res) => {
   res.send(new Date());
@@ -24,7 +24,7 @@ fs.readdir(__dirname + "/events/", (err, files) => {
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
     console.log("Loading Event: "+eventName)
-  });
+  }); 
 });
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
